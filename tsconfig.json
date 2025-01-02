@@ -9,9 +9,9 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "nestri-sdk/_shims/auto/*": ["src/_shims/auto/*-node"],
-      "nestri-sdk/*": ["src/*"],
-      "nestri-sdk": ["src/index.ts"]
+      "@nestri/sdk/_shims/auto/*": ["src/_shims/auto/*-node"],
+      "@nestri/sdk/*": ["src/*"],
+      "@nestri/sdk": ["src/index.ts"]
     },
     "noEmit": true,
 

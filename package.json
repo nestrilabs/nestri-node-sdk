@@ -1,12 +1,12 @@
 {
-  "name": "nestri-sdk",
-  "version": "0.0.1-alpha.0",
-  "description": "The official TypeScript library for the Nestri SDK API",
-  "author": "Nestri SDK <dev-feedback@nestri-sdk.com>",
+  "name": "@nestri/sdk",
+  "version": "0.1.0-alpha.1",
+  "description": "The official TypeScript library for the Nestri API",
+  "author": "Nestri <feedback@nestri.io>",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "type": "commonjs",
-  "repository": "github:stainless-sdks/nestri-sdk-node",
+  "repository": "github:nestrilabs/nestri-node-sdk",
   "license": "Apache-2.0",
   "packageManager": "yarn@1.22.22",
   "files": [
@@ -59,8 +59,8 @@
     "./shims/web.mjs"
   ],
   "imports": {
-    "nestri-sdk": ".",
-    "nestri-sdk/*": "./src/*"
+    "@nestri/sdk": ".",
+    "@nestri/sdk/*": "./src/*"
   },
   "exports": {
     "./_shims/auto/*": {
