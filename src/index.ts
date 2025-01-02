@@ -6,8 +6,6 @@ import * as Errors from './error';
 import * as Uploads from './uploads';
 import * as API from './resources/index';
 import {
-  MachineCreateParams,
-  MachineCreateResponse,
   MachineDeleteResponse,
   MachineListResponse,
   MachineRetrieveResponse,
@@ -171,11 +169,9 @@ export declare namespace Nestri {
 
   export {
     Machines as Machines,
-    type MachineCreateResponse as MachineCreateResponse,
     type MachineRetrieveResponse as MachineRetrieveResponse,
     type MachineListResponse as MachineListResponse,
     type MachineDeleteResponse as MachineDeleteResponse,
-    type MachineCreateParams as MachineCreateParams,
   };
 }
 

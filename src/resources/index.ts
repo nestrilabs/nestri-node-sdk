@@ -2,9 +2,7 @@
 
 export {
   Machines,
-  type MachineCreateResponse,
   type MachineRetrieveResponse,
   type MachineListResponse,
   type MachineDeleteResponse,
-  type MachineCreateParams,
 } from './machines';
