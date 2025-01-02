@@ -16,11 +16,11 @@ before making any information public.
 ## Reporting Non-SDK Related Security Issues
 
 If you encounter security issues that are not directly related to SDKs but pertain to the services
-or products provided by Nestri SDK please follow the respective company's security reporting guidelines.
+or products provided by Nestri please follow the respective company's security reporting guidelines.
 
-### Nestri SDK Terms and Policies
+### Nestri Terms and Policies
 
-Please contact dev-feedback@nestri-sdk.com for any questions or concerns regarding security of our services.
+Please contact feedback@nestri.io for any questions or concerns regarding security of our services.
 
 ---
 

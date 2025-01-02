@@ -23,7 +23,7 @@ export interface ClientOptions {
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
    *
-   * Defaults to process.env['NESTRI_SDK_BASE_URL'].
+   * Defaults to process.env['NESTRI_BASE_URL'].
    */
   baseURL?: string | null | undefined;
 
@@ -78,18 +78,18 @@ export interface ClientOptions {
 }
 
 /**
- * API Client for interfacing with the Nestri SDK API.
+ * API Client for interfacing with the Nestri API.
  */
-export class NestriSDK extends Core.APIClient {
+export class Nestri extends Core.APIClient {
   bearerToken: string;
 
   private _options: ClientOptions;
 
   /**
-   * API Client for interfacing with the Nestri SDK API.
+   * API Client for interfacing with the Nestri API.
    *
    * @param {string | undefined} [opts.bearerToken=process.env['BEARER_TOKEN'] ?? undefined]
-   * @param {string} [opts.baseURL=process.env['NESTRI_SDK_BASE_URL'] ?? https://api.nestri.io] - Override the default base URL for the API.
+   * @param {string} [opts.baseURL=process.env['NESTRI_BASE_URL'] ?? https://api.nestri.io] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {number} [opts.httpAgent] - An HTTP agent used to manage HTTP(s) connections.
    * @param {Core.Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -98,13 +98,13 @@ export class NestriSDK extends Core.APIClient {
    * @param {Core.DefaultQuery} opts.defaultQuery - Default query parameters to include with every request to the API.
    */
   constructor({
-    baseURL = Core.readEnv('NESTRI_SDK_BASE_URL'),
+    baseURL = Core.readEnv('NESTRI_BASE_URL'),
     bearerToken = Core.readEnv('BEARER_TOKEN'),
     ...opts
   }: ClientOptions = {}) {
     if (bearerToken === undefined) {
-      throw new Errors.NestriSDKError(
-        "The BEARER_TOKEN environment variable is missing or empty; either provide it, or instantiate the NestriSDK client with an bearerToken option, like new NestriSDK({ bearerToken: 'My Bearer Token' }).",
+      throw new Errors.NestriError(
+        "The BEARER_TOKEN environment variable is missing or empty; either provide it, or instantiate the Nestri client with an bearerToken option, like new Nestri({ bearerToken: 'My Bearer Token' }).",
       );
     }
 
@@ -144,10 +144,10 @@ export class NestriSDK extends Core.APIClient {
     return { Authorization: `Bearer ${this.bearerToken}` };
   }
 
-  static NestriSDK = this;
+  static Nestri = this;
   static DEFAULT_TIMEOUT = 60000; // 1 minute
 
-  static NestriSDKError = Errors.NestriSDKError;
+  static NestriError = Errors.NestriError;
   static APIError = Errors.APIError;
   static APIConnectionError = Errors.APIConnectionError;
   static APIConnectionTimeoutError = Errors.APIConnectionTimeoutError;
@@ -165,8 +165,8 @@ export class NestriSDK extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-NestriSDK.Machines = Machines;
-export declare namespace NestriSDK {
+Nestri.Machines = Machines;
+export declare namespace Nestri {
   export type RequestOptions = Core.RequestOptions;
 
   export {
@@ -181,7 +181,7 @@ export declare namespace NestriSDK {
 
 export { toFile, fileFromPath } from './uploads';
 export {
-  NestriSDKError,
+  NestriError,
   APIError,
   APIConnectionError,
   APIConnectionTimeoutError,
@@ -196,4 +196,4 @@ export {
   UnprocessableEntityError,
 } from './error';
 
-export default NestriSDK;
+export default Nestri;

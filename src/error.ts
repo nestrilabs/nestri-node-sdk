@@ -2,13 +2,13 @@
 
 import { castToError, Headers } from './core';
 
-export class NestriSDKError extends Error {}
+export class NestriError extends Error {}
 
 export class APIError<
   TStatus extends number | undefined = number | undefined,
   THeaders extends Headers | undefined = Headers | undefined,
   TError extends Object | undefined = Object | undefined,
-> extends NestriSDKError {
+> extends NestriError {
   /** HTTP status for the response that caused the error */
   readonly status: TStatus;
   /** HTTP headers for the response that caused the error */
