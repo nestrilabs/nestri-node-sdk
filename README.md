@@ -1,4 +1,4 @@
-# Nestri Node API Library
+# Nestri API Library
 
 [![NPM version](https://img.shields.io/npm/v/@nestri/sdk.svg)](https://npmjs.org/package/@nestri/sdk) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@nestri/sdk)
 
