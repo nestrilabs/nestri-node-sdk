@@ -5,13 +5,6 @@ import * as Core from '../core';
 
 export class Machines extends APIResource {
   /**
-   * Create a machine.
-   */
-  create(body: MachineCreateParams, options?: Core.RequestOptions): Core.APIPromise<MachineCreateResponse> {
-    return this._client.post('/machine', { body, ...options });
-  }
-
-  /**
    * Get the machine with the given ID.
    */
   retrieve(id: string, options?: Core.RequestOptions): Core.APIPromise<MachineRetrieveResponse> {
@@ -31,10 +24,6 @@ export class Machines extends APIResource {
   delete(id: string, options?: Core.RequestOptions): Core.APIPromise<MachineDeleteResponse> {
     return this._client.delete(`/machine/${id}`, options);
   }
-}
-
-export interface MachineCreateResponse {
-  data: 'ok';
 }
 
 export interface MachineRetrieveResponse {
@@ -109,24 +98,10 @@ export interface MachineDeleteResponse {
   data: 'ok';
 }
 
-export interface MachineCreateParams {
-  /**
-   * The machine's fingerprint, derived from the machine's Linux machine ID.
-   */
-  fingerprint: string;
-
-  /**
-   * Hostname of the machine
-   */
-  hostname: string;
-}
-
 export declare namespace Machines {
   export {
-    type MachineCreateResponse as MachineCreateResponse,
     type MachineRetrieveResponse as MachineRetrieveResponse,
     type MachineListResponse as MachineListResponse,
     type MachineDeleteResponse as MachineDeleteResponse,
-    type MachineCreateParams as MachineCreateParams,
   };
 }
