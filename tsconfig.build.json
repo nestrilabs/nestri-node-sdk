@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "nestri-sdk/*": ["dist/src/*"],
-      "nestri-sdk": ["dist/src/index.ts"],
+      "@nestri/sdk/*": ["dist/src/*"],
+      "@nestri/sdk": ["dist/src/index.ts"],
     },
     "noEmit": false,
     "declaration": true,

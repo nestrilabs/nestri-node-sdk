@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import NestriSDK from 'nestri-sdk';
-import { APIUserAbortError } from 'nestri-sdk';
-import { Headers } from 'nestri-sdk/core';
+import NestriSDK from '@nestri/sdk';
+import { APIUserAbortError } from '@nestri/sdk';
+import { Headers } from '@nestri/sdk/core';
 import defaultFetch, { Response, type RequestInit, type RequestInfo } from 'node-fetch';
 
 describe('instantiate client', () => {

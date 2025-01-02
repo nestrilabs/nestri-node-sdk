@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { NestriSDK } from 'nestri-sdk';
+import { NestriSDK } from '@nestri/sdk';
 
 const { stringifyQuery } = NestriSDK.prototype as any;
 
