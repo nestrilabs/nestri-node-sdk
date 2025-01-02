@@ -1,5 +1,5 @@
 {
-  "name": "nestri-sdk",
+  "name": "@nestri/sdk",
   "version": "0.0.1-alpha.0",
   "description": "The official TypeScript library for the Nestri SDK API",
   "author": "Nestri SDK <dev-feedback@nestri-sdk.com>",
@@ -59,8 +59,8 @@
     "./shims/web.mjs"
   ],
   "imports": {
-    "nestri-sdk": ".",
-    "nestri-sdk/*": "./src/*"
+    "@nestri/sdk": ".",
+    "@nestri/sdk/*": "./src/*"
   },
   "exports": {
     "./_shims/auto/*": {

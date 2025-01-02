@@ -1,6 +1,6 @@
 # Nestri SDK Node API Library
 
-[![NPM version](https://img.shields.io/npm/v/nestri-sdk.svg)](https://npmjs.org/package/nestri-sdk) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/nestri-sdk)
+[![NPM version](https://img.shields.io/npm/v/@nestri/sdk.svg)](https://npmjs.org/package/@nestri/sdk) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@nestri/sdk)
 
 This library provides convenient access to the Nestri SDK REST API from server-side TypeScript or JavaScript.
 
@@ -11,7 +11,7 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 ## Installation
 
 ```sh
-npm install nestri-sdk
+npm install @nestri/sdk
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ The full API of this library can be found in [api.md](api.md).
 
 <!-- prettier-ignore -->
 ```js
-import NestriSDK from 'nestri-sdk';
+import NestriSDK from '@nestri/sdk';
 
 const client = new NestriSDK({
   bearerToken: process.env['BEARER_TOKEN'], // This is the default and can be omitted
@@ -41,7 +41,7 @@ This library includes TypeScript definitions for all request params and response
 
 <!-- prettier-ignore -->
 ```ts
-import NestriSDK from 'nestri-sdk';
+import NestriSDK from '@nestri/sdk';
 
 const client = new NestriSDK({
   bearerToken: process.env['BEARER_TOKEN'], // This is the default and can be omitted
@@ -210,11 +210,11 @@ add the following import before your first import `from "NestriSDK"`:
 ```ts
 // Tell TypeScript and the package to use the global web fetch instead of node-fetch.
 // Note, despite the name, this does not add any polyfills, but expects them to be provided if needed.
-import 'nestri-sdk/shims/web';
-import NestriSDK from 'nestri-sdk';
+import '@nestri/sdk/shims/web';
+import NestriSDK from '@nestri/sdk';
 ```
 
-To do the inverse, add `import "nestri-sdk/shims/node"` (which does import polyfills).
+To do the inverse, add `import "@nestri/sdk/shims/node"` (which does import polyfills).
 This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/nestrilabs/nestri-node-sdk/tree/main/src/_shims#readme)).
 
 ### Logging and middleware
@@ -224,7 +224,7 @@ which can be used to inspect or alter the `Request` or `Response` before/after e
 
 ```ts
 import { fetch } from 'undici'; // as one example
-import NestriSDK from 'nestri-sdk';
+import NestriSDK from '@nestri/sdk';
 
 const client = new NestriSDK({
   fetch: async (url: RequestInfo, init?: RequestInit): Promise<Response> => {

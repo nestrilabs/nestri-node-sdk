@@ -4,8 +4,8 @@
 /**
  * Types will get added to this namespace when you import one of the following:
  *
- *   import 'nestri-sdk/shims/node'
- *   import 'nestri-sdk/shims/web'
+ *   import '@nestri/sdk/shims/node'
+ *   import '@nestri/sdk/shims/web'
  *
  * Importing more than one will cause type and runtime errors.
  */
