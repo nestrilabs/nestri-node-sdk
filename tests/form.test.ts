@@ -1,6 +1,6 @@
-import { multipartFormRequestOptions, createForm } from 'nestri-sdk/core';
-import { Blob } from 'nestri-sdk/_shims/index';
-import { toFile } from 'nestri-sdk';
+import { multipartFormRequestOptions, createForm } from '@nestri/sdk/core';
+import { Blob } from '@nestri/sdk/_shims/index';
+import { toFile } from '@nestri/sdk';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {

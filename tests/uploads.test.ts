@@ -1,6 +1,6 @@
 import fs from 'fs';
-import { toFile, type ResponseLike } from 'nestri-sdk/uploads';
-import { File } from 'nestri-sdk/_shims/index';
+import { toFile, type ResponseLike } from '@nestri/sdk/uploads';
+import { File } from '@nestri/sdk/_shims/index';
 
 class MyClass {
   name: string = 'foo';

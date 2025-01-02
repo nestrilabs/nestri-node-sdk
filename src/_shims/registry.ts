@@ -42,12 +42,12 @@ export let isFsReadStream: Shims['isFsReadStream'] | undefined = undefined;
 export function setShims(shims: Shims, options: { auto: boolean } = { auto: false }) {
   if (auto) {
     throw new Error(
-      `you must \`import 'nestri-sdk/shims/${shims.kind}'\` before importing anything else from nestri-sdk`,
+      `you must \`import '@nestri/sdk/shims/${shims.kind}'\` before importing anything else from @nestri/sdk`,
     );
   }
   if (kind) {
     throw new Error(
-      `can't \`import 'nestri-sdk/shims/${shims.kind}'\` after \`import 'nestri-sdk/shims/${kind}'\``,
+      `can't \`import '@nestri/sdk/shims/${shims.kind}'\` after \`import '@nestri/sdk/shims/${kind}'\``,
     );
   }
   auto = options.auto;

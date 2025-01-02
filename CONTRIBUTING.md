@@ -55,12 +55,12 @@ $ cd nestri-node-sdk
 # With yarn
 $ yarn link
 $ cd ../my-package
-$ yarn link nestri-sdk
+$ yarn link @nestri/sdk
 
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global nestri-sdk
+$ pnpm link -—global @nestri/sdk
 ```
 
 ## Running tests
