@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import NestriSDK from '@nestri/sdk';
+import Nestri from '@nestri/sdk';
 import { Response } from 'node-fetch';
 
-const client = new NestriSDK({
+const client = new Nestri({
   bearerToken: 'My Bearer Token',
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
@@ -45,7 +45,7 @@ describe('resource machines', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.machines.retrieve('mchn_XXXXXXXXXXXXXXXXXXXXXXXXX', { path: '/_stainless_unknown_path' }),
-    ).rejects.toThrow(NestriSDK.NotFoundError);
+    ).rejects.toThrow(Nestri.NotFoundError);
   });
 
   test('list', async () => {
@@ -62,7 +62,7 @@ describe('resource machines', () => {
   test('list: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(client.machines.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
-      NestriSDK.NotFoundError,
+      Nestri.NotFoundError,
     );
   });
 
@@ -81,6 +81,6 @@ describe('resource machines', () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.machines.delete('mchn_XXXXXXXXXXXXXXXXXXXXXXXXX', { path: '/_stainless_unknown_path' }),
-    ).rejects.toThrow(NestriSDK.NotFoundError);
+    ).rejects.toThrow(Nestri.NotFoundError);
   });
 });
