@@ -6,11 +6,20 @@ import * as Errors from './error';
 import * as Uploads from './uploads';
 import * as API from './resources/index';
 import {
+  MachineCreateResponse,
   MachineDeleteResponse,
   MachineListResponse,
   MachineRetrieveResponse,
   Machines,
 } from './resources/machines';
+import {
+  SessionCreateParams,
+  SessionCreateResponse,
+  SessionDeleteResponse,
+  SessionListResponse,
+  SessionRetrieveResponse,
+  Sessions,
+} from './resources/sessions';
 
 export interface ClientOptions {
   /**
@@ -126,6 +135,7 @@ export class Nestri extends Core.APIClient {
   }
 
   machines: API.Machines = new API.Machines(this);
+  sessions: API.Sessions = new API.Sessions(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
@@ -164,14 +174,25 @@ export class Nestri extends Core.APIClient {
 }
 
 Nestri.Machines = Machines;
+Nestri.Sessions = Sessions;
 export declare namespace Nestri {
   export type RequestOptions = Core.RequestOptions;
 
   export {
     Machines as Machines,
+    type MachineCreateResponse as MachineCreateResponse,
     type MachineRetrieveResponse as MachineRetrieveResponse,
     type MachineListResponse as MachineListResponse,
     type MachineDeleteResponse as MachineDeleteResponse,
+  };
+
+  export {
+    Sessions as Sessions,
+    type SessionCreateResponse as SessionCreateResponse,
+    type SessionRetrieveResponse as SessionRetrieveResponse,
+    type SessionListResponse as SessionListResponse,
+    type SessionDeleteResponse as SessionDeleteResponse,
+    type SessionCreateParams as SessionCreateParams,
   };
 }
 
