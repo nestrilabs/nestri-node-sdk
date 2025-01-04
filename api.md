@@ -18,14 +18,62 @@ Methods:
 
 Types:
 
-- <code><a href="./src/resources/sessions.ts">SessionCreateResponse</a></code>
-- <code><a href="./src/resources/sessions.ts">SessionRetrieveResponse</a></code>
-- <code><a href="./src/resources/sessions.ts">SessionListResponse</a></code>
-- <code><a href="./src/resources/sessions.ts">SessionDeleteResponse</a></code>
+- <code><a href="./src/resources/sessions/sessions.ts">SessionCreateResponse</a></code>
+- <code><a href="./src/resources/sessions/sessions.ts">SessionRetrieveResponse</a></code>
+- <code><a href="./src/resources/sessions/sessions.ts">SessionListResponse</a></code>
+- <code><a href="./src/resources/sessions/sessions.ts">SessionDeleteResponse</a></code>
 
 Methods:
 
-- <code title="post /sessions/{id}">client.sessions.<a href="./src/resources/sessions.ts">create</a>(id, { ...params }) -> SessionCreateResponse</code>
-- <code title="get /sessions/{id}">client.sessions.<a href="./src/resources/sessions.ts">retrieve</a>(id) -> SessionRetrieveResponse</code>
-- <code title="get /sessions">client.sessions.<a href="./src/resources/sessions.ts">list</a>() -> SessionListResponse</code>
-- <code title="delete /sessions/{id}">client.sessions.<a href="./src/resources/sessions.ts">delete</a>(id) -> SessionDeleteResponse</code>
+- <code title="post /sessions/{id}">client.sessions.<a href="./src/resources/sessions/sessions.ts">create</a>(id, { ...params }) -> SessionCreateResponse</code>
+- <code title="get /sessions/{id}">client.sessions.<a href="./src/resources/sessions/sessions.ts">retrieve</a>(id) -> SessionRetrieveResponse</code>
+- <code title="get /sessions">client.sessions.<a href="./src/resources/sessions/sessions.ts">list</a>() -> SessionListResponse</code>
+- <code title="delete /sessions/{id}">client.sessions.<a href="./src/resources/sessions/sessions.ts">delete</a>(id) -> SessionDeleteResponse</code>
+
+## Active
+
+Types:
+
+- <code><a href="./src/resources/sessions/active/active.ts">ActiveListResponse</a></code>
+
+Methods:
+
+- <code title="get /sessions/active">client.sessions.active.<a href="./src/resources/sessions/active/active.ts">list</a>() -> ActiveListResponse</code>
+
+### Public
+
+Types:
+
+- <code><a href="./src/resources/sessions/active/public.ts">PublicListResponse</a></code>
+
+Methods:
+
+- <code title="get /sessions/active/public">client.sessions.active.public.<a href="./src/resources/sessions/active/public.ts">list</a>() -> PublicListResponse</code>
+
+# Games
+
+Types:
+
+- <code><a href="./src/resources/games/games.ts">GameCreateResponse</a></code>
+- <code><a href="./src/resources/games/games.ts">GameRetrieveResponse</a></code>
+- <code><a href="./src/resources/games/games.ts">GameUpdateResponse</a></code>
+- <code><a href="./src/resources/games/games.ts">GameListResponse</a></code>
+- <code><a href="./src/resources/games/games.ts">GameDeleteResponse</a></code>
+
+Methods:
+
+- <code title="post /games/{steamID}">client.games.<a href="./src/resources/games/games.ts">create</a>(steamId) -> GameCreateResponse</code>
+- <code title="get /games/{steamID}">client.games.<a href="./src/resources/games/games.ts">retrieve</a>(steamId) -> GameRetrieveResponse</code>
+- <code title="put /games">client.games.<a href="./src/resources/games/games.ts">update</a>({ ...params }) -> GameUpdateResponse</code>
+- <code title="get /games">client.games.<a href="./src/resources/games/games.ts">list</a>() -> GameListResponse</code>
+- <code title="delete /games/{steamID}">client.games.<a href="./src/resources/games/games.ts">delete</a>(steamId) -> GameDeleteResponse</code>
+
+## Sessions
+
+Types:
+
+- <code><a href="./src/resources/games/sessions.ts">SessionListResponse</a></code>
+
+Methods:
+
+- <code title="get /games/{steamID}/sessions">client.games.sessions.<a href="./src/resources/games/sessions.ts">list</a>(steamId) -> SessionListResponse</code>
