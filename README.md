@@ -27,7 +27,7 @@ const client = new Nestri({
 });
 
 async function main() {
-  const machine = await client.machines.retrieve('REPLACE_ME');
+  const machine = await client.machines.create('fc27f428f9ca47d4b41b70889ae0c62090');
 
   console.log(machine.data);
 }
@@ -48,7 +48,9 @@ const client = new Nestri({
 });
 
 async function main() {
-  const machine: Nestri.MachineRetrieveResponse = await client.machines.retrieve('REPLACE_ME');
+  const machine: Nestri.MachineCreateResponse = await client.machines.create(
+    'fc27f428f9ca47d4b41b70889ae0c62090',
+  );
 }
 
 main();
@@ -65,7 +67,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const machine = await client.machines.retrieve('REPLACE_ME').catch(async (err) => {
+  const machine = await client.machines.create('fc27f428f9ca47d4b41b70889ae0c62090').catch(async (err) => {
     if (err instanceof Nestri.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -108,7 +110,7 @@ const client = new Nestri({
 });
 
 // Or, configure per-request:
-await client.machines.retrieve('REPLACE_ME', {
+await client.machines.create('fc27f428f9ca47d4b41b70889ae0c62090', {
   maxRetries: 5,
 });
 ```
@@ -125,7 +127,7 @@ const client = new Nestri({
 });
 
 // Override per-request:
-await client.machines.retrieve('REPLACE_ME', {
+await client.machines.create('fc27f428f9ca47d4b41b70889ae0c62090', {
   timeout: 5 * 1000,
 });
 ```
@@ -146,11 +148,13 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const client = new Nestri();
 
-const response = await client.machines.retrieve('REPLACE_ME').asResponse();
+const response = await client.machines.create('fc27f428f9ca47d4b41b70889ae0c62090').asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: machine, response: raw } = await client.machines.retrieve('REPLACE_ME').withResponse();
+const { data: machine, response: raw } = await client.machines
+  .create('fc27f428f9ca47d4b41b70889ae0c62090')
+  .withResponse();
 console.log(raw.headers.get('X-My-Header'));
 console.log(machine.data);
 ```
@@ -256,7 +260,7 @@ const client = new Nestri({
 });
 
 // Override per-request:
-await client.machines.retrieve('REPLACE_ME', {
+await client.machines.create('fc27f428f9ca47d4b41b70889ae0c62090', {
   httpAgent: new http.Agent({ keepAlive: false }),
 });
 ```
