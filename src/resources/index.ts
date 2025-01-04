@@ -1,6 +1,15 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 export {
+  Games,
+  type GameCreateResponse,
+  type GameRetrieveResponse,
+  type GameUpdateResponse,
+  type GameListResponse,
+  type GameDeleteResponse,
+  type GameUpdateParams,
+} from './games/games';
+export {
   Machines,
   type MachineCreateResponse,
   type MachineRetrieveResponse,
@@ -14,4 +23,4 @@ export {
   type SessionListResponse,
   type SessionDeleteResponse,
   type SessionCreateParams,
-} from './sessions';
+} from './sessions/sessions';

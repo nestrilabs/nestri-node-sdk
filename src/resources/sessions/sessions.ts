@@ -1,9 +1,13 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../resource';
-import * as Core from '../core';
+import { APIResource } from '../../resource';
+import * as Core from '../../core';
+import * as ActiveAPI from './active/active';
+import { Active, ActiveListResponse } from './active/active';
 
 export class Sessions extends APIResource {
+  active: ActiveAPI.Active = new ActiveAPI.Active(this._client);
+
   /**
    * Creates a new gaming session for the currently authenticated user, enabling them
    * to play a game
@@ -156,6 +160,8 @@ export interface SessionCreateParams {
   steamID: number;
 }
 
+Sessions.Active = Active;
+
 export declare namespace Sessions {
   export {
     type SessionCreateResponse as SessionCreateResponse,
@@ -164,4 +170,6 @@ export declare namespace Sessions {
     type SessionDeleteResponse as SessionDeleteResponse,
     type SessionCreateParams as SessionCreateParams,
   };
+
+  export { Active as Active, type ActiveListResponse as ActiveListResponse };
 }
