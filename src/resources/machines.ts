@@ -5,37 +5,53 @@ import * as Core from '../core';
 
 export class Machines extends APIResource {
   /**
-   * Get the machine with the given ID.
+   * Associates a machine with the currently authenticated user's account, enabling
+   * them to manage and control the machine
    */
-  retrieve(id: string, options?: Core.RequestOptions): Core.APIPromise<MachineRetrieveResponse> {
-    return this._client.get(`/machine/${id}`, options);
+  create(fingerprint: string, options?: Core.RequestOptions): Core.APIPromise<MachineCreateResponse> {
+    return this._client.post(`/machines/${fingerprint}`, options);
   }
 
   /**
-   * List the current user's machines.
+   * Fetches detailed information about a specific machine using its unique
+   * fingerprint derived from the Linux machine ID
+   */
+  retrieve(fingerprint: string, options?: Core.RequestOptions): Core.APIPromise<MachineRetrieveResponse> {
+    return this._client.get(`/machines/${fingerprint}`, options);
+  }
+
+  /**
+   * Returns a list of all machines registered to the authenticated user in the
+   * Nestri network
    */
   list(options?: Core.RequestOptions): Core.APIPromise<MachineListResponse> {
-    return this._client.get('/machine', options);
+    return this._client.get('/machines', options);
   }
 
   /**
-   * Delete the machine with the given ID.
+   * Removes the association between a machine and the authenticated user's account.
+   * This does not delete the machine itself, but removes the user's ability to
+   * manage it
    */
-  delete(id: string, options?: Core.RequestOptions): Core.APIPromise<MachineDeleteResponse> {
-    return this._client.delete(`/machine/${id}`, options);
+  delete(fingerprint: string, options?: Core.RequestOptions): Core.APIPromise<MachineDeleteResponse> {
+    return this._client.delete(`/machines/${fingerprint}`, options);
   }
+}
+
+export interface MachineCreateResponse {
+  data: 'ok';
 }
 
 export interface MachineRetrieveResponse {
   /**
-   * A machine running on the Nestri network.
+   * Represents a a physical or virtual machine connected to the Nestri network..
    */
   data: MachineRetrieveResponse.Data;
 }
 
 export namespace MachineRetrieveResponse {
   /**
-   * A machine running on the Nestri network.
+   * Represents a a physical or virtual machine connected to the Nestri network..
    */
   export interface Data {
     /**
@@ -44,32 +60,33 @@ export namespace MachineRetrieveResponse {
     id: string;
 
     /**
-     * The machine's fingerprint, derived from the machine's Linux machine ID.
+     * Represents a machine running on the Nestri network, containing its identifying
+     * information and metadata.
+     */
+    createdAt: string | number;
+
+    /**
+     * A unique identifier derived from the machine's Linux machine ID.
      */
     fingerprint: string;
 
     /**
-     * Hostname of the machine
+     * The Linux hostname that identifies this machine
      */
     hostname: string;
-
-    /**
-     * The machine's approximate location; country and continent.
-     */
-    location: string;
   }
 }
 
 export interface MachineListResponse {
   /**
-   * List of machines.
+   * A list of machines associated with the user
    */
   data: Array<MachineListResponse.Data>;
 }
 
 export namespace MachineListResponse {
   /**
-   * A machine running on the Nestri network.
+   * Represents a a physical or virtual machine connected to the Nestri network..
    */
   export interface Data {
     /**
@@ -78,19 +95,20 @@ export namespace MachineListResponse {
     id: string;
 
     /**
-     * The machine's fingerprint, derived from the machine's Linux machine ID.
+     * Represents a machine running on the Nestri network, containing its identifying
+     * information and metadata.
+     */
+    createdAt: string | number;
+
+    /**
+     * A unique identifier derived from the machine's Linux machine ID.
      */
     fingerprint: string;
 
     /**
-     * Hostname of the machine
+     * The Linux hostname that identifies this machine
      */
     hostname: string;
-
-    /**
-     * The machine's approximate location; country and continent.
-     */
-    location: string;
   }
 }
 
@@ -100,6 +118,7 @@ export interface MachineDeleteResponse {
 
 export declare namespace Machines {
   export {
+    type MachineCreateResponse as MachineCreateResponse,
     type MachineRetrieveResponse as MachineRetrieveResponse,
     type MachineListResponse as MachineListResponse,
     type MachineDeleteResponse as MachineDeleteResponse,
