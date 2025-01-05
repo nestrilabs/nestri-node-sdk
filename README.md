@@ -23,13 +23,13 @@ The full API of this library can be found in [api.md](api.md).
 import Nestri from '@nestri/sdk';
 
 const client = new Nestri({
-  bearerToken: process.env['BEARER_TOKEN'], // This is the default and can be omitted
+  bearerToken: process.env['NESTRI_API_KEY'], // This is the default and can be omitted
 });
 
 async function main() {
-  const machine = await client.machines.create('fc27f428f9ca47d4b41b70889ae0c62090');
+  const game = await client.games.retrieve(870780);
 
-  console.log(machine.data);
+  console.log(game.data);
 }
 
 main();
@@ -44,13 +44,11 @@ This library includes TypeScript definitions for all request params and response
 import Nestri from '@nestri/sdk';
 
 const client = new Nestri({
-  bearerToken: process.env['BEARER_TOKEN'], // This is the default and can be omitted
+  bearerToken: process.env['NESTRI_API_KEY'], // This is the default and can be omitted
 });
 
 async function main() {
-  const machine: Nestri.MachineCreateResponse = await client.machines.create(
-    'fc27f428f9ca47d4b41b70889ae0c62090',
-  );
+  const game: Nestri.GameRetrieveResponse = await client.games.retrieve(870780);
 }
 
 main();
@@ -67,7 +65,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const machine = await client.machines.create('fc27f428f9ca47d4b41b70889ae0c62090').catch(async (err) => {
+  const game = await client.games.retrieve(870780).catch(async (err) => {
     if (err instanceof Nestri.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -110,7 +108,7 @@ const client = new Nestri({
 });
 
 // Or, configure per-request:
-await client.machines.create('fc27f428f9ca47d4b41b70889ae0c62090', {
+await client.games.retrieve(870780, {
   maxRetries: 5,
 });
 ```
@@ -127,7 +125,7 @@ const client = new Nestri({
 });
 
 // Override per-request:
-await client.machines.create('fc27f428f9ca47d4b41b70889ae0c62090', {
+await client.games.retrieve(870780, {
   timeout: 5 * 1000,
 });
 ```
@@ -148,15 +146,13 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const client = new Nestri();
 
-const response = await client.machines.create('fc27f428f9ca47d4b41b70889ae0c62090').asResponse();
+const response = await client.games.retrieve(870780).asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: machine, response: raw } = await client.machines
-  .create('fc27f428f9ca47d4b41b70889ae0c62090')
-  .withResponse();
+const { data: game, response: raw } = await client.games.retrieve(870780).withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(machine.data);
+console.log(game.data);
 ```
 
 ### Making custom/undocumented requests
@@ -260,7 +256,7 @@ const client = new Nestri({
 });
 
 // Override per-request:
-await client.machines.create('fc27f428f9ca47d4b41b70889ae0c62090', {
+await client.games.retrieve(870780, {
   httpAgent: new http.Agent({ keepAlive: false }),
 });
 ```
