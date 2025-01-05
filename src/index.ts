@@ -104,7 +104,7 @@ export class Nestri extends Core.APIClient {
   /**
    * API Client for interfacing with the Nestri API.
    *
-   * @param {string | undefined} [opts.bearerToken=process.env['BEARER_TOKEN'] ?? undefined]
+   * @param {string | undefined} [opts.bearerToken=process.env['NESTRI_API_KEY'] ?? undefined]
    * @param {string} [opts.baseURL=process.env['NESTRI_BASE_URL'] ?? https://api.nestri.io] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {number} [opts.httpAgent] - An HTTP agent used to manage HTTP(s) connections.
@@ -115,12 +115,12 @@ export class Nestri extends Core.APIClient {
    */
   constructor({
     baseURL = Core.readEnv('NESTRI_BASE_URL'),
-    bearerToken = Core.readEnv('BEARER_TOKEN'),
+    bearerToken = Core.readEnv('NESTRI_API_KEY'),
     ...opts
   }: ClientOptions = {}) {
     if (bearerToken === undefined) {
       throw new Errors.NestriError(
-        "The BEARER_TOKEN environment variable is missing or empty; either provide it, or instantiate the Nestri client with an bearerToken option, like new Nestri({ bearerToken: 'My Bearer Token' }).",
+        "The NESTRI_API_KEY environment variable is missing or empty; either provide it, or instantiate the Nestri client with an bearerToken option, like new Nestri({ bearerToken: 'My Bearer Token' }).",
       );
     }
 
