@@ -44,14 +44,14 @@ export interface MachineCreateResponse {
 
 export interface MachineRetrieveResponse {
   /**
-   * Represents a a physical or virtual machine connected to the Nestri network..
+   * Represents a physical or virtual machine connected to the Nestri network..
    */
   data: MachineRetrieveResponse.Data;
 }
 
 export namespace MachineRetrieveResponse {
   /**
-   * Represents a a physical or virtual machine connected to the Nestri network..
+   * Represents a physical or virtual machine connected to the Nestri network..
    */
   export interface Data {
     /**
@@ -86,7 +86,7 @@ export interface MachineListResponse {
 
 export namespace MachineListResponse {
   /**
-   * Represents a a physical or virtual machine connected to the Nestri network..
+   * Represents a physical or virtual machine connected to the Nestri network..
    */
   export interface Data {
     /**
