@@ -24,3 +24,4 @@ export {
   type SessionDeleteResponse,
   type SessionCreateParams,
 } from './sessions/sessions';
+export { Users, type UserRetrieveResponse } from './users';
