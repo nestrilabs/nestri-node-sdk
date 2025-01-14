@@ -77,3 +77,13 @@ Types:
 Methods:
 
 - <code title="get /games/{steamID}/sessions">client.games.sessions.<a href="./src/resources/games/sessions.ts">list</a>(steamId) -> SessionListResponse</code>
+
+# Users
+
+Types:
+
+- <code><a href="./src/resources/users.ts">UserRetrieveResponse</a></code>
+
+Methods:
+
+- <code title="get /users/@me">client.users.<a href="./src/resources/users.ts">retrieve</a>() -> UserRetrieveResponse</code>

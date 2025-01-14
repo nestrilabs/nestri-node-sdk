@@ -12,6 +12,7 @@ import {
   MachineRetrieveResponse,
   Machines,
 } from './resources/machines';
+import { UserRetrieveResponse, Users } from './resources/users';
 import {
   GameCreateResponse,
   GameDeleteResponse,
@@ -146,6 +147,7 @@ export class Nestri extends Core.APIClient {
   machines: API.Machines = new API.Machines(this);
   sessions: API.Sessions = new API.Sessions(this);
   games: API.Games = new API.Games(this);
+  users: API.Users = new API.Users(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
@@ -186,6 +188,7 @@ export class Nestri extends Core.APIClient {
 Nestri.Machines = Machines;
 Nestri.Sessions = Sessions;
 Nestri.Games = Games;
+Nestri.Users = Users;
 export declare namespace Nestri {
   export type RequestOptions = Core.RequestOptions;
 
@@ -215,6 +218,8 @@ export declare namespace Nestri {
     type GameDeleteResponse as GameDeleteResponse,
     type GameUpdateParams as GameUpdateParams,
   };
+
+  export { Users as Users, type UserRetrieveResponse as UserRetrieveResponse };
 }
 
 export { toFile, fileFromPath } from './uploads';
