@@ -24,4 +24,13 @@ export {
   type SessionDeleteResponse,
   type SessionCreateParams,
 } from './sessions/sessions';
+export {
+  Teams,
+  type TeamCreateResponse,
+  type TeamRetrieveResponse,
+  type TeamListResponse,
+  type TeamDeleteResponse,
+  type TeamInviteResponse,
+  type TeamCreateParams,
+} from './teams';
 export { Users, type UserRetrieveResponse } from './users';

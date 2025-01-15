@@ -9,15 +9,11 @@ export class Sessions extends APIResource {
   active: ActiveAPI.Active = new ActiveAPI.Active(this._client);
 
   /**
-   * Creates a new gaming session for the currently authenticated user, enabling them
+   * Create a new gaming session for the currently authenticated user, enabling them
    * to play a game
    */
-  create(
-    id: string,
-    body: SessionCreateParams,
-    options?: Core.RequestOptions,
-  ): Core.APIPromise<SessionCreateResponse> {
-    return this._client.post(`/sessions/${id}`, { body, ...options });
+  create(body: SessionCreateParams, options?: Core.RequestOptions): Core.APIPromise<SessionCreateResponse> {
+    return this._client.post('/sessions', { body, ...options });
   }
 
   /**
