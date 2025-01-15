@@ -25,7 +25,7 @@ Types:
 
 Methods:
 
-- <code title="post /sessions/{id}">client.sessions.<a href="./src/resources/sessions/sessions.ts">create</a>(id, { ...params }) -> SessionCreateResponse</code>
+- <code title="post /sessions">client.sessions.<a href="./src/resources/sessions/sessions.ts">create</a>({ ...params }) -> SessionCreateResponse</code>
 - <code title="get /sessions/{id}">client.sessions.<a href="./src/resources/sessions/sessions.ts">retrieve</a>(id) -> SessionRetrieveResponse</code>
 - <code title="get /sessions">client.sessions.<a href="./src/resources/sessions/sessions.ts">list</a>() -> SessionListResponse</code>
 - <code title="delete /sessions/{id}">client.sessions.<a href="./src/resources/sessions/sessions.ts">delete</a>(id) -> SessionDeleteResponse</code>
@@ -87,3 +87,21 @@ Types:
 Methods:
 
 - <code title="get /users/@me">client.users.<a href="./src/resources/users.ts">retrieve</a>() -> UserRetrieveResponse</code>
+
+# Teams
+
+Types:
+
+- <code><a href="./src/resources/teams.ts">TeamCreateResponse</a></code>
+- <code><a href="./src/resources/teams.ts">TeamRetrieveResponse</a></code>
+- <code><a href="./src/resources/teams.ts">TeamListResponse</a></code>
+- <code><a href="./src/resources/teams.ts">TeamDeleteResponse</a></code>
+- <code><a href="./src/resources/teams.ts">TeamInviteResponse</a></code>
+
+Methods:
+
+- <code title="post /teams">client.teams.<a href="./src/resources/teams.ts">create</a>({ ...params }) -> TeamCreateResponse</code>
+- <code title="get /teams/{slug}">client.teams.<a href="./src/resources/teams.ts">retrieve</a>(slug) -> TeamRetrieveResponse</code>
+- <code title="get /teams">client.teams.<a href="./src/resources/teams.ts">list</a>() -> TeamListResponse</code>
+- <code title="delete /teams/{slug}">client.teams.<a href="./src/resources/teams.ts">delete</a>(slug) -> TeamDeleteResponse</code>
+- <code title="post /teams/{slug}/invite/{email}">client.teams.<a href="./src/resources/teams.ts">invite</a>(slug, email) -> TeamInviteResponse</code>
