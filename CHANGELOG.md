@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.6 (2025-01-15)
+
+Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/nestrilabs/nestri-node-sdk/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
+
+### Features
+
+* **api:** Add team endpoints ([#24](https://github.com/nestrilabs/nestri-node-sdk/issues/24)) ([9025dd9](https://github.com/nestrilabs/nestri-node-sdk/commit/9025dd9e062c65dbad4a5fedc9658370a02983d8))
+
 ## 0.1.0-alpha.5 (2025-01-14)
 
 Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/nestrilabs/nestri-node-sdk/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
