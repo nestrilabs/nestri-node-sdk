@@ -15,7 +15,6 @@ import {
 import {
   SubscriptionCreateParams,
   SubscriptionCreateResponse,
-  SubscriptionDeleteResponse,
   SubscriptionListResponse,
   Subscriptions,
 } from './resources/subscriptions';
@@ -255,7 +254,6 @@ export declare namespace Nestri {
     Subscriptions as Subscriptions,
     type SubscriptionCreateResponse as SubscriptionCreateResponse,
     type SubscriptionListResponse as SubscriptionListResponse,
-    type SubscriptionDeleteResponse as SubscriptionDeleteResponse,
     type SubscriptionCreateParams as SubscriptionCreateParams,
   };
 }
