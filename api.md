@@ -112,10 +112,8 @@ Types:
 
 - <code><a href="./src/resources/subscriptions.ts">SubscriptionCreateResponse</a></code>
 - <code><a href="./src/resources/subscriptions.ts">SubscriptionListResponse</a></code>
-- <code><a href="./src/resources/subscriptions.ts">SubscriptionDeleteResponse</a></code>
 
 Methods:
 
 - <code title="post /subscriptions">client.subscriptions.<a href="./src/resources/subscriptions.ts">create</a>({ ...params }) -> SubscriptionCreateResponse</code>
 - <code title="get /subscriptions">client.subscriptions.<a href="./src/resources/subscriptions.ts">list</a>() -> SubscriptionListResponse</code>
-- <code title="delete /subscriptions/{id}">client.subscriptions.<a href="./src/resources/subscriptions.ts">delete</a>(id) -> SubscriptionDeleteResponse</code>

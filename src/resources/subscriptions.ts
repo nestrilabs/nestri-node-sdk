@@ -20,13 +20,6 @@ export class Subscriptions extends APIResource {
   list(options?: Core.RequestOptions): Core.APIPromise<SubscriptionListResponse> {
     return this._client.get('/subscriptions', options);
   }
-
-  /**
-   * Cancel a subscription for the current user.
-   */
-  delete(id: string, options?: Core.RequestOptions): Core.APIPromise<SubscriptionDeleteResponse> {
-    return this._client.delete(`/subscriptions/${id}`, options);
-  }
 }
 
 export interface SubscriptionCreateResponse {
@@ -77,10 +70,6 @@ export namespace SubscriptionListResponse {
   }
 }
 
-export interface SubscriptionDeleteResponse {
-  data: 'ok';
-}
-
 export interface SubscriptionCreateParams {
   /**
    * Unique object identifier. The format and length of IDs may change over time.
@@ -117,7 +106,6 @@ export declare namespace Subscriptions {
   export {
     type SubscriptionCreateResponse as SubscriptionCreateResponse,
     type SubscriptionListResponse as SubscriptionListResponse,
-    type SubscriptionDeleteResponse as SubscriptionDeleteResponse,
     type SubscriptionCreateParams as SubscriptionCreateParams,
   };
 }
