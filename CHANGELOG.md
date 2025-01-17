@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.7 (2025-01-17)
+
+Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/nestrilabs/nestri-node-sdk/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
+
+### Chores
+
+* **internal:** codegen related update ([#27](https://github.com/nestrilabs/nestri-node-sdk/issues/27)) ([5086bba](https://github.com/nestrilabs/nestri-node-sdk/commit/5086bba5e452aa511b0b1964b42c95c85b8050a6))
+
 ## 0.1.0-alpha.6 (2025-01-15)
 
 Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/nestrilabs/nestri-node-sdk/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
