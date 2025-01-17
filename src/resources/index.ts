@@ -28,6 +28,7 @@ export {
   Subscriptions,
   type SubscriptionCreateResponse,
   type SubscriptionListResponse,
+  type SubscriptionDeleteResponse,
   type SubscriptionCreateParams,
 } from './subscriptions';
 export {
