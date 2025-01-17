@@ -105,3 +105,17 @@ Methods:
 - <code title="get /teams">client.teams.<a href="./src/resources/teams.ts">list</a>() -> TeamListResponse</code>
 - <code title="delete /teams/{slug}">client.teams.<a href="./src/resources/teams.ts">delete</a>(slug) -> TeamDeleteResponse</code>
 - <code title="post /teams/{slug}/invite/{email}">client.teams.<a href="./src/resources/teams.ts">invite</a>(slug, email) -> TeamInviteResponse</code>
+
+# Subscriptions
+
+Types:
+
+- <code><a href="./src/resources/subscriptions.ts">SubscriptionCreateResponse</a></code>
+- <code><a href="./src/resources/subscriptions.ts">SubscriptionListResponse</a></code>
+- <code><a href="./src/resources/subscriptions.ts">SubscriptionDeleteResponse</a></code>
+
+Methods:
+
+- <code title="post /subscriptions">client.subscriptions.<a href="./src/resources/subscriptions.ts">create</a>({ ...params }) -> SubscriptionCreateResponse</code>
+- <code title="get /subscriptions">client.subscriptions.<a href="./src/resources/subscriptions.ts">list</a>() -> SubscriptionListResponse</code>
+- <code title="delete /subscriptions/{id}">client.subscriptions.<a href="./src/resources/subscriptions.ts">delete</a>(id) -> SubscriptionDeleteResponse</code>
