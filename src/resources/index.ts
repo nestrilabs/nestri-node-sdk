@@ -24,7 +24,13 @@ export {
   type SessionDeleteResponse,
   type SessionCreateParams,
 } from './sessions/sessions';
-export { Subscriptions } from './subscriptions';
+export {
+  Subscriptions,
+  type SubscriptionCreateResponse,
+  type SubscriptionListResponse,
+  type SubscriptionDeleteResponse,
+  type SubscriptionCreateParams,
+} from './subscriptions';
 export {
   Teams,
   type TeamCreateResponse,
