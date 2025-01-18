@@ -51,24 +51,9 @@ export namespace SubscriptionListResponse {
     id: string;
 
     /**
-     * Frequency of the subscription.
+     * The polar.sh checkout id
      */
-    frequency: 'fixed' | 'daily' | 'weekly' | 'monthly' | 'yearly';
-
-    /**
-     * Next billing date for the subscription.
-     */
-    next: string | number;
-
-    /**
-     * ID of the product being subscribed to.
-     */
-    productID: string;
-
-    /**
-     * Quantity of the subscription.
-     */
-    quantity: number;
+    checkoutID: string;
 
     /**
      * Cancelled date for the subscription.
@@ -83,34 +68,9 @@ export interface SubscriptionDeleteResponse {
 
 export interface SubscriptionCreateParams {
   /**
-   * Unique object identifier. The format and length of IDs may change over time.
+   * The checkout id information.
    */
-  id: string;
-
-  /**
-   * Frequency of the subscription.
-   */
-  frequency: 'fixed' | 'daily' | 'weekly' | 'monthly' | 'yearly';
-
-  /**
-   * Next billing date for the subscription.
-   */
-  next: string | number;
-
-  /**
-   * ID of the product being subscribed to.
-   */
-  productID: string;
-
-  /**
-   * Quantity of the subscription.
-   */
-  quantity: number;
-
-  /**
-   * Cancelled date for the subscription.
-   */
-  canceledAt?: string | number;
+  checkoutID: string;
 }
 
 export declare namespace Subscriptions {
