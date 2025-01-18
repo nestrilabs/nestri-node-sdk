@@ -105,3 +105,5 @@ Methods:
 - <code title="get /teams">client.teams.<a href="./src/resources/teams.ts">list</a>() -> TeamListResponse</code>
 - <code title="delete /teams/{slug}">client.teams.<a href="./src/resources/teams.ts">delete</a>(slug) -> TeamDeleteResponse</code>
 - <code title="post /teams/{slug}/invite/{email}">client.teams.<a href="./src/resources/teams.ts">invite</a>(slug, email) -> TeamInviteResponse</code>
+
+# Subscriptions

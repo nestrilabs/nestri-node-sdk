@@ -12,6 +12,7 @@ import {
   MachineRetrieveResponse,
   Machines,
 } from './resources/machines';
+import { Subscriptions } from './resources/subscriptions';
 import {
   TeamCreateParams,
   TeamCreateResponse,
@@ -158,6 +159,7 @@ export class Nestri extends Core.APIClient {
   games: API.Games = new API.Games(this);
   users: API.Users = new API.Users(this);
   teams: API.Teams = new API.Teams(this);
+  subscriptions: API.Subscriptions = new API.Subscriptions(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
@@ -200,6 +202,7 @@ Nestri.Sessions = Sessions;
 Nestri.Games = Games;
 Nestri.Users = Users;
 Nestri.Teams = Teams;
+Nestri.Subscriptions = Subscriptions;
 export declare namespace Nestri {
   export type RequestOptions = Core.RequestOptions;
 
@@ -241,6 +244,8 @@ export declare namespace Nestri {
     type TeamInviteResponse as TeamInviteResponse,
     type TeamCreateParams as TeamCreateParams,
   };
+
+  export { Subscriptions as Subscriptions };
 }
 
 export { toFile, fileFromPath } from './uploads';
