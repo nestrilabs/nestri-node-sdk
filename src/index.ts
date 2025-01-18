@@ -12,7 +12,13 @@ import {
   MachineRetrieveResponse,
   Machines,
 } from './resources/machines';
-import { Subscriptions } from './resources/subscriptions';
+import {
+  SubscriptionCreateParams,
+  SubscriptionCreateResponse,
+  SubscriptionDeleteResponse,
+  SubscriptionListResponse,
+  Subscriptions,
+} from './resources/subscriptions';
 import {
   TeamCreateParams,
   TeamCreateResponse,
@@ -245,7 +251,13 @@ export declare namespace Nestri {
     type TeamCreateParams as TeamCreateParams,
   };
 
-  export { Subscriptions as Subscriptions };
+  export {
+    Subscriptions as Subscriptions,
+    type SubscriptionCreateResponse as SubscriptionCreateResponse,
+    type SubscriptionListResponse as SubscriptionListResponse,
+    type SubscriptionDeleteResponse as SubscriptionDeleteResponse,
+    type SubscriptionCreateParams as SubscriptionCreateParams,
+  };
 }
 
 export { toFile, fileFromPath } from './uploads';
