@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.0-alpha.8 (2025-01-18)
+
+Full Changelog: [v0.1.0-alpha.7...v0.1.0-alpha.8](https://github.com/nestrilabs/nestri-node-sdk/compare/v0.1.0-alpha.7...v0.1.0-alpha.8)
+
+### Features
+
+* **api:** manual updates ([#38](https://github.com/nestrilabs/nestri-node-sdk/issues/38)) ([333f0e9](https://github.com/nestrilabs/nestri-node-sdk/commit/333f0e94c65c8a2958c925ecd71384174bfeb9fc))
+* **api:** update subscriptions ([#33](https://github.com/nestrilabs/nestri-node-sdk/issues/33)) ([68c4d2d](https://github.com/nestrilabs/nestri-node-sdk/commit/68c4d2d9f614ab972c622f802cb1730fe07fd04b))
+* **api:** update subscriptions ([#35](https://github.com/nestrilabs/nestri-node-sdk/issues/35)) ([cb6cf1a](https://github.com/nestrilabs/nestri-node-sdk/commit/cb6cf1a949072a9938fe76ed962b2448eb02b3e3))
+
 ## 0.1.0-alpha.7 (2025-01-17)
 
 Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/nestrilabs/nestri-node-sdk/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
