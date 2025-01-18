@@ -13,6 +13,12 @@ import {
   Machines,
 } from './resources/machines';
 import {
+  SubscriptionCreateParams,
+  SubscriptionCreateResponse,
+  SubscriptionListResponse,
+  Subscriptions,
+} from './resources/subscriptions';
+import {
   TeamCreateParams,
   TeamCreateResponse,
   TeamDeleteResponse,
@@ -240,6 +246,13 @@ export declare namespace Nestri {
     type TeamDeleteResponse as TeamDeleteResponse,
     type TeamInviteResponse as TeamInviteResponse,
     type TeamCreateParams as TeamCreateParams,
+  };
+
+  export {
+    Subscriptions as Subscriptions,
+    type SubscriptionCreateResponse as SubscriptionCreateResponse,
+    type SubscriptionListResponse as SubscriptionListResponse,
+    type SubscriptionCreateParams as SubscriptionCreateParams,
   };
 }
 
