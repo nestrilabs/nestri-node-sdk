@@ -27,9 +27,9 @@ const client = new Nestri({
 });
 
 async function main() {
-  const game = await client.games.retrieve(870780);
+  const user = await client.users.retrieve();
 
-  console.log(game.data);
+  console.log(user.data);
 }
 
 main();
@@ -48,7 +48,7 @@ const client = new Nestri({
 });
 
 async function main() {
-  const game: Nestri.GameRetrieveResponse = await client.games.retrieve(870780);
+  const user: Nestri.UserRetrieveResponse = await client.users.retrieve();
 }
 
 main();
@@ -65,7 +65,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const game = await client.games.retrieve(870780).catch(async (err) => {
+  const user = await client.users.retrieve().catch(async (err) => {
     if (err instanceof Nestri.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -108,7 +108,7 @@ const client = new Nestri({
 });
 
 // Or, configure per-request:
-await client.games.retrieve(870780, {
+await client.users.retrieve({
   maxRetries: 5,
 });
 ```
@@ -125,7 +125,7 @@ const client = new Nestri({
 });
 
 // Override per-request:
-await client.games.retrieve(870780, {
+await client.users.retrieve({
   timeout: 5 * 1000,
 });
 ```
@@ -146,13 +146,13 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const client = new Nestri();
 
-const response = await client.games.retrieve(870780).asResponse();
+const response = await client.users.retrieve().asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: game, response: raw } = await client.games.retrieve(870780).withResponse();
+const { data: user, response: raw } = await client.users.retrieve().withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(game.data);
+console.log(user.data);
 ```
 
 ### Making custom/undocumented requests
@@ -256,7 +256,7 @@ const client = new Nestri({
 });
 
 // Override per-request:
-await client.games.retrieve(870780, {
+await client.users.retrieve({
   httpAgent: new http.Agent({ keepAlive: false }),
 });
 ```
