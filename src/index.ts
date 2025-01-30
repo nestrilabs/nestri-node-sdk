@@ -5,13 +5,7 @@ import * as Core from './core';
 import * as Errors from './error';
 import * as Uploads from './uploads';
 import * as API from './resources/index';
-import {
-  MachineCreateResponse,
-  MachineDeleteResponse,
-  MachineListResponse,
-  MachineRetrieveResponse,
-  Machines,
-} from './resources/machines';
+import { Machines } from './resources/machines';
 import {
   SubscriptionCreateParams,
   SubscriptionCreateResponse,
@@ -19,33 +13,10 @@ import {
   SubscriptionListResponse,
   Subscriptions,
 } from './resources/subscriptions';
-import {
-  TeamCreateParams,
-  TeamCreateResponse,
-  TeamDeleteResponse,
-  TeamInviteResponse,
-  TeamListResponse,
-  TeamRetrieveResponse,
-  Teams,
-} from './resources/teams';
+import { Teams } from './resources/teams';
 import { UserRetrieveResponse, Users } from './resources/users';
-import {
-  GameCreateResponse,
-  GameDeleteResponse,
-  GameListResponse,
-  GameRetrieveResponse,
-  GameUpdateParams,
-  GameUpdateResponse,
-  Games,
-} from './resources/games/games';
-import {
-  SessionCreateParams,
-  SessionCreateResponse,
-  SessionDeleteResponse,
-  SessionListResponse,
-  SessionRetrieveResponse,
-  Sessions,
-} from './resources/sessions/sessions';
+import { Games } from './resources/games/games';
+import { Sessions } from './resources/sessions/sessions';
 
 export interface ClientOptions {
   /**
@@ -212,44 +183,15 @@ Nestri.Subscriptions = Subscriptions;
 export declare namespace Nestri {
   export type RequestOptions = Core.RequestOptions;
 
-  export {
-    Machines as Machines,
-    type MachineCreateResponse as MachineCreateResponse,
-    type MachineRetrieveResponse as MachineRetrieveResponse,
-    type MachineListResponse as MachineListResponse,
-    type MachineDeleteResponse as MachineDeleteResponse,
-  };
+  export { Machines as Machines };
 
-  export {
-    Sessions as Sessions,
-    type SessionCreateResponse as SessionCreateResponse,
-    type SessionRetrieveResponse as SessionRetrieveResponse,
-    type SessionListResponse as SessionListResponse,
-    type SessionDeleteResponse as SessionDeleteResponse,
-    type SessionCreateParams as SessionCreateParams,
-  };
+  export { Sessions as Sessions };
 
-  export {
-    Games as Games,
-    type GameCreateResponse as GameCreateResponse,
-    type GameRetrieveResponse as GameRetrieveResponse,
-    type GameUpdateResponse as GameUpdateResponse,
-    type GameListResponse as GameListResponse,
-    type GameDeleteResponse as GameDeleteResponse,
-    type GameUpdateParams as GameUpdateParams,
-  };
+  export { Games as Games };
 
   export { Users as Users, type UserRetrieveResponse as UserRetrieveResponse };
 
-  export {
-    Teams as Teams,
-    type TeamCreateResponse as TeamCreateResponse,
-    type TeamRetrieveResponse as TeamRetrieveResponse,
-    type TeamListResponse as TeamListResponse,
-    type TeamDeleteResponse as TeamDeleteResponse,
-    type TeamInviteResponse as TeamInviteResponse,
-    type TeamCreateParams as TeamCreateParams,
-  };
+  export { Teams as Teams };
 
   export {
     Subscriptions as Subscriptions,
