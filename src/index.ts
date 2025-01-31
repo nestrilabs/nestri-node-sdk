@@ -5,7 +5,6 @@ import * as Core from './core';
 import * as Errors from './error';
 import * as Uploads from './uploads';
 import * as API from './resources/index';
-import { Machines } from './resources/machines';
 import {
   SubscriptionCreateParams,
   SubscriptionCreateResponse,
@@ -13,9 +12,17 @@ import {
   SubscriptionListResponse,
   Subscriptions,
 } from './resources/subscriptions';
+import {
+  TaskCreateResponse,
+  TaskDeleteResponse,
+  TaskListResponse,
+  TaskRetrieveResponse,
+  TaskSessionResponse,
+  TaskUpdateResponse,
+  Tasks,
+} from './resources/tasks';
 import { Teams } from './resources/teams';
 import { UserRetrieveResponse, Users } from './resources/users';
-import { Games } from './resources/games/games';
 import {
   SessionCreateParams,
   SessionCreateResponse,
@@ -137,12 +144,11 @@ export class Nestri extends Core.APIClient {
     this.bearerToken = bearerToken;
   }
 
-  machines: API.Machines = new API.Machines(this);
   sessions: API.Sessions = new API.Sessions(this);
-  games: API.Games = new API.Games(this);
   users: API.Users = new API.Users(this);
   teams: API.Teams = new API.Teams(this);
   subscriptions: API.Subscriptions = new API.Subscriptions(this);
+  tasks: API.Tasks = new API.Tasks(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
@@ -180,16 +186,13 @@ export class Nestri extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-Nestri.Machines = Machines;
 Nestri.Sessions = Sessions;
-Nestri.Games = Games;
 Nestri.Users = Users;
 Nestri.Teams = Teams;
 Nestri.Subscriptions = Subscriptions;
+Nestri.Tasks = Tasks;
 export declare namespace Nestri {
   export type RequestOptions = Core.RequestOptions;
-
-  export { Machines as Machines };
 
   export {
     Sessions as Sessions,
@@ -198,8 +201,6 @@ export declare namespace Nestri {
     type SessionDeleteResponse as SessionDeleteResponse,
     type SessionCreateParams as SessionCreateParams,
   };
-
-  export { Games as Games };
 
   export { Users as Users, type UserRetrieveResponse as UserRetrieveResponse };
 
@@ -211,6 +212,16 @@ export declare namespace Nestri {
     type SubscriptionListResponse as SubscriptionListResponse,
     type SubscriptionDeleteResponse as SubscriptionDeleteResponse,
     type SubscriptionCreateParams as SubscriptionCreateParams,
+  };
+
+  export {
+    Tasks as Tasks,
+    type TaskCreateResponse as TaskCreateResponse,
+    type TaskRetrieveResponse as TaskRetrieveResponse,
+    type TaskUpdateResponse as TaskUpdateResponse,
+    type TaskListResponse as TaskListResponse,
+    type TaskDeleteResponse as TaskDeleteResponse,
+    type TaskSessionResponse as TaskSessionResponse,
   };
 }
 
