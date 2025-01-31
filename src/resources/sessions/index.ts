@@ -1,4 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { Active } from './active/index';
-export { Sessions } from './sessions';
+export { Active, type ActiveListResponse } from './active/index';
+export {
+  Sessions,
+  type SessionCreateResponse,
+  type SessionRetrieveResponse,
+  type SessionDeleteResponse,
+  type SessionCreateParams,
+} from './sessions';

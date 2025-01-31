@@ -2,7 +2,27 @@
 
 # Sessions
 
+Types:
+
+- <code><a href="./src/resources/sessions/sessions.ts">SessionCreateResponse</a></code>
+- <code><a href="./src/resources/sessions/sessions.ts">SessionRetrieveResponse</a></code>
+- <code><a href="./src/resources/sessions/sessions.ts">SessionDeleteResponse</a></code>
+
+Methods:
+
+- <code title="post /sessions">client.sessions.<a href="./src/resources/sessions/sessions.ts">create</a>({ ...params }) -> SessionCreateResponse</code>
+- <code title="get /sessions/{id}">client.sessions.<a href="./src/resources/sessions/sessions.ts">retrieve</a>(id) -> SessionRetrieveResponse</code>
+- <code title="delete /sessions/{id}">client.sessions.<a href="./src/resources/sessions/sessions.ts">delete</a>(id) -> SessionDeleteResponse</code>
+
 ## Active
+
+Types:
+
+- <code><a href="./src/resources/sessions/active/active.ts">ActiveListResponse</a></code>
+
+Methods:
+
+- <code title="get /sessions/active">client.sessions.active.<a href="./src/resources/sessions/active/active.ts">list</a>() -> ActiveListResponse</code>
 
 ### Public
 
