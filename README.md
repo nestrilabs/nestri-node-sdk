@@ -27,9 +27,9 @@ const client = new Nestri({
 });
 
 async function main() {
-  const game = await client.games.retrieve(870780);
+  const session = await client.sessions.create({ public: true });
 
-  console.log(game.data);
+  console.log(session.data);
 }
 
 main();
@@ -48,7 +48,8 @@ const client = new Nestri({
 });
 
 async function main() {
-  const game: Nestri.GameRetrieveResponse = await client.games.retrieve(870780);
+  const params: Nestri.SessionCreateParams = { public: true };
+  const session: Nestri.SessionCreateResponse = await client.sessions.create(params);
 }
 
 main();
@@ -65,7 +66,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const game = await client.games.retrieve(870780).catch(async (err) => {
+  const session = await client.sessions.create({ public: true }).catch(async (err) => {
     if (err instanceof Nestri.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -108,7 +109,7 @@ const client = new Nestri({
 });
 
 // Or, configure per-request:
-await client.games.retrieve(870780, {
+await client.sessions.create({ public: true }, {
   maxRetries: 5,
 });
 ```
@@ -125,7 +126,7 @@ const client = new Nestri({
 });
 
 // Override per-request:
-await client.games.retrieve(870780, {
+await client.sessions.create({ public: true }, {
   timeout: 5 * 1000,
 });
 ```
@@ -146,13 +147,13 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const client = new Nestri();
 
-const response = await client.games.retrieve(870780).asResponse();
+const response = await client.sessions.create({ public: true }).asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: game, response: raw } = await client.games.retrieve(870780).withResponse();
+const { data: session, response: raw } = await client.sessions.create({ public: true }).withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(game.data);
+console.log(session.data);
 ```
 
 ### Making custom/undocumented requests
@@ -256,9 +257,12 @@ const client = new Nestri({
 });
 
 // Override per-request:
-await client.games.retrieve(870780, {
-  httpAgent: new http.Agent({ keepAlive: false }),
-});
+await client.sessions.create(
+  { public: true },
+  {
+    httpAgent: new http.Agent({ keepAlive: false }),
+  },
+);
 ```
 
 ## Semantic versioning

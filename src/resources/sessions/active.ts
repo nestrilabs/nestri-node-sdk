@@ -1,25 +1,26 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../../resource';
-import * as Core from '../../../core';
+import { APIResource } from '../../resource';
+import * as Core from '../../core';
 
-export class Public extends APIResource {
+export class Active extends APIResource {
   /**
-   * Returns a list of all publicly active gaming sessions associated
+   * Returns a list of all active gaming sessions associated with the authenticated
+   * user
    */
-  list(options?: Core.RequestOptions): Core.APIPromise<PublicListResponse> {
-    return this._client.get('/sessions/active/public', options);
+  list(options?: Core.RequestOptions): Core.APIPromise<ActiveListResponse> {
+    return this._client.get('/sessions/active', options);
   }
 }
 
-export interface PublicListResponse {
+export interface ActiveListResponse {
   /**
-   * A list of publicly active gaming sessions
+   * A list of active gaming sessions associated with the user
    */
-  data: Array<PublicListResponse.Data>;
+  data: Array<ActiveListResponse.Data>;
 }
 
-export namespace PublicListResponse {
+export namespace ActiveListResponse {
   /**
    * Represents a single game play session, tracking its lifetime and accessibility
    * settings.
@@ -29,11 +30,6 @@ export namespace PublicListResponse {
      * Unique object identifier. The format and length of IDs may change over time.
      */
     id: string;
-
-    /**
-     * A human-readable name for the session to help identify it
-     */
-    name: string;
 
     /**
      * If true, the session is publicly viewable by all users. If false, only
@@ -54,6 +50,6 @@ export namespace PublicListResponse {
   }
 }
 
-export declare namespace Public {
-  export { type PublicListResponse as PublicListResponse };
+export declare namespace Active {
+  export { type ActiveListResponse as ActiveListResponse };
 }

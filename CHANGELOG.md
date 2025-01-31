@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.1.0-alpha.12 (2025-01-31)
+
+Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/nestrilabs/nestri-node-sdk/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)
+
+### Features
+
+* **api:** Add tasks and remove old resources ([#53](https://github.com/nestrilabs/nestri-node-sdk/issues/53)) ([d334b13](https://github.com/nestrilabs/nestri-node-sdk/commit/d334b132128d8367e2504c126db0e25a580a98b1))
+* **api:** api update ([#51](https://github.com/nestrilabs/nestri-node-sdk/issues/51)) ([b8280da](https://github.com/nestrilabs/nestri-node-sdk/commit/b8280da35f96f5af07426bb1ad6767d84a6628eb))
+* **api:** api update ([#52](https://github.com/nestrilabs/nestri-node-sdk/issues/52)) ([39e0834](https://github.com/nestrilabs/nestri-node-sdk/commit/39e0834c6a58b5a0bbb39a4117dc193fc98c1b9d))
+* **api:** code samples ([#49](https://github.com/nestrilabs/nestri-node-sdk/issues/49)) ([51964d9](https://github.com/nestrilabs/nestri-node-sdk/commit/51964d9dfdc5a50e2cdeb685a25bb6eb656645cc))
+
 ## 0.1.0-alpha.11 (2025-01-18)
 
 Full Changelog: [v0.1.0-alpha.10...v0.1.0-alpha.11](https://github.com/nestrilabs/nestri-node-sdk/compare/v0.1.0-alpha.10...v0.1.0-alpha.11)

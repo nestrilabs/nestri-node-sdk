@@ -8,9 +8,9 @@ const client = new Nestri({
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
-describe('resource teams', () => {
-  test('create: only required params', async () => {
-    const responsePromise = client.teams.create({ name: "Jane Doe's Games", slug: 'jane-does-games' });
+describe('resource tasks', () => {
+  test('create', async () => {
+    const responsePromise = client.tasks.create();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -20,12 +20,15 @@ describe('resource teams', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('create: required and optional params', async () => {
-    const response = await client.teams.create({ name: "Jane Doe's Games", slug: 'jane-does-games' });
+  test('create: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(client.tasks.create({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Nestri.NotFoundError,
+    );
   });
 
   test('retrieve', async () => {
-    const responsePromise = client.teams.retrieve('jane-does-games');
+    const responsePromise = client.tasks.retrieve('0bfcc712-df13-4454-81a8-fbee66eddca4');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -38,12 +41,30 @@ describe('resource teams', () => {
   test('retrieve: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.teams.retrieve('jane-does-games', { path: '/_stainless_unknown_path' }),
+      client.tasks.retrieve('0bfcc712-df13-4454-81a8-fbee66eddca4', { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(Nestri.NotFoundError);
+  });
+
+  test('update', async () => {
+    const responsePromise = client.tasks.update('0bfcc712-df13-4454-81a8-fbee66eddca4');
+    const rawResponse = await responsePromise.asResponse();
+    expect(rawResponse).toBeInstanceOf(Response);
+    const response = await responsePromise;
+    expect(response).not.toBeInstanceOf(Response);
+    const dataAndResponse = await responsePromise.withResponse();
+    expect(dataAndResponse.data).toBe(response);
+    expect(dataAndResponse.response).toBe(rawResponse);
+  });
+
+  test('update: request options instead of params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.tasks.update('0bfcc712-df13-4454-81a8-fbee66eddca4', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Nestri.NotFoundError);
   });
 
   test('list', async () => {
-    const responsePromise = client.teams.list();
+    const responsePromise = client.tasks.list();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -55,13 +76,13 @@ describe('resource teams', () => {
 
   test('list: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(client.teams.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.tasks.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Nestri.NotFoundError,
     );
   });
 
   test('delete', async () => {
-    const responsePromise = client.teams.delete('jane-does-games');
+    const responsePromise = client.tasks.delete('0bfcc712-df13-4454-81a8-fbee66eddca4');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -74,12 +95,12 @@ describe('resource teams', () => {
   test('delete: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.teams.delete('jane-does-games', { path: '/_stainless_unknown_path' }),
+      client.tasks.delete('0bfcc712-df13-4454-81a8-fbee66eddca4', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Nestri.NotFoundError);
   });
 
-  test('invite', async () => {
-    const responsePromise = client.teams.invite('jane-does-games', 'john@example.com');
+  test('session', async () => {
+    const responsePromise = client.tasks.session('0bfcc712-df13-4454-81a8-fbee66eddca4');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -89,10 +110,10 @@ describe('resource teams', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('invite: request options instead of params are passed correctly', async () => {
+  test('session: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      client.teams.invite('jane-does-games', 'john@example.com', { path: '/_stainless_unknown_path' }),
+      client.tasks.session('0bfcc712-df13-4454-81a8-fbee66eddca4', { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Nestri.NotFoundError);
   });
 });

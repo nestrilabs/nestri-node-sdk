@@ -6,13 +6,6 @@ import * as Errors from './error';
 import * as Uploads from './uploads';
 import * as API from './resources/index';
 import {
-  MachineCreateResponse,
-  MachineDeleteResponse,
-  MachineListResponse,
-  MachineRetrieveResponse,
-  Machines,
-} from './resources/machines';
-import {
   SubscriptionCreateParams,
   SubscriptionCreateResponse,
   SubscriptionDeleteResponse,
@@ -20,29 +13,20 @@ import {
   Subscriptions,
 } from './resources/subscriptions';
 import {
-  TeamCreateParams,
-  TeamCreateResponse,
-  TeamDeleteResponse,
-  TeamInviteResponse,
-  TeamListResponse,
-  TeamRetrieveResponse,
-  Teams,
-} from './resources/teams';
+  TaskCreateResponse,
+  TaskDeleteResponse,
+  TaskListResponse,
+  TaskRetrieveResponse,
+  TaskSessionResponse,
+  TaskUpdateResponse,
+  Tasks,
+} from './resources/tasks';
+import { Teams } from './resources/teams';
 import { UserRetrieveResponse, Users } from './resources/users';
-import {
-  GameCreateResponse,
-  GameDeleteResponse,
-  GameListResponse,
-  GameRetrieveResponse,
-  GameUpdateParams,
-  GameUpdateResponse,
-  Games,
-} from './resources/games/games';
 import {
   SessionCreateParams,
   SessionCreateResponse,
   SessionDeleteResponse,
-  SessionListResponse,
   SessionRetrieveResponse,
   Sessions,
 } from './resources/sessions/sessions';
@@ -160,12 +144,11 @@ export class Nestri extends Core.APIClient {
     this.bearerToken = bearerToken;
   }
 
-  machines: API.Machines = new API.Machines(this);
   sessions: API.Sessions = new API.Sessions(this);
-  games: API.Games = new API.Games(this);
   users: API.Users = new API.Users(this);
   teams: API.Teams = new API.Teams(this);
   subscriptions: API.Subscriptions = new API.Subscriptions(this);
+  tasks: API.Tasks = new API.Tasks(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;
@@ -203,53 +186,25 @@ export class Nestri extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-Nestri.Machines = Machines;
 Nestri.Sessions = Sessions;
-Nestri.Games = Games;
 Nestri.Users = Users;
 Nestri.Teams = Teams;
 Nestri.Subscriptions = Subscriptions;
+Nestri.Tasks = Tasks;
 export declare namespace Nestri {
   export type RequestOptions = Core.RequestOptions;
-
-  export {
-    Machines as Machines,
-    type MachineCreateResponse as MachineCreateResponse,
-    type MachineRetrieveResponse as MachineRetrieveResponse,
-    type MachineListResponse as MachineListResponse,
-    type MachineDeleteResponse as MachineDeleteResponse,
-  };
 
   export {
     Sessions as Sessions,
     type SessionCreateResponse as SessionCreateResponse,
     type SessionRetrieveResponse as SessionRetrieveResponse,
-    type SessionListResponse as SessionListResponse,
     type SessionDeleteResponse as SessionDeleteResponse,
     type SessionCreateParams as SessionCreateParams,
   };
 
-  export {
-    Games as Games,
-    type GameCreateResponse as GameCreateResponse,
-    type GameRetrieveResponse as GameRetrieveResponse,
-    type GameUpdateResponse as GameUpdateResponse,
-    type GameListResponse as GameListResponse,
-    type GameDeleteResponse as GameDeleteResponse,
-    type GameUpdateParams as GameUpdateParams,
-  };
-
   export { Users as Users, type UserRetrieveResponse as UserRetrieveResponse };
 
-  export {
-    Teams as Teams,
-    type TeamCreateResponse as TeamCreateResponse,
-    type TeamRetrieveResponse as TeamRetrieveResponse,
-    type TeamListResponse as TeamListResponse,
-    type TeamDeleteResponse as TeamDeleteResponse,
-    type TeamInviteResponse as TeamInviteResponse,
-    type TeamCreateParams as TeamCreateParams,
-  };
+  export { Teams as Teams };
 
   export {
     Subscriptions as Subscriptions,
@@ -257,6 +212,16 @@ export declare namespace Nestri {
     type SubscriptionListResponse as SubscriptionListResponse,
     type SubscriptionDeleteResponse as SubscriptionDeleteResponse,
     type SubscriptionCreateParams as SubscriptionCreateParams,
+  };
+
+  export {
+    Tasks as Tasks,
+    type TaskCreateResponse as TaskCreateResponse,
+    type TaskRetrieveResponse as TaskRetrieveResponse,
+    type TaskUpdateResponse as TaskUpdateResponse,
+    type TaskListResponse as TaskListResponse,
+    type TaskDeleteResponse as TaskDeleteResponse,
+    type TaskSessionResponse as TaskSessionResponse,
   };
 }
 

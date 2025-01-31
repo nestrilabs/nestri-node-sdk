@@ -2,8 +2,8 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as ActiveAPI from './active/active';
-import { Active, ActiveListResponse } from './active/active';
+import * as ActiveAPI from './active';
+import { Active, ActiveListResponse } from './active';
 
 export class Sessions extends APIResource {
   active: ActiveAPI.Active = new ActiveAPI.Active(this._client);
@@ -21,13 +21,6 @@ export class Sessions extends APIResource {
    */
   retrieve(id: string, options?: Core.RequestOptions): Core.APIPromise<SessionRetrieveResponse> {
     return this._client.get(`/sessions/${id}`, options);
-  }
-
-  /**
-   * Returns a list of all gaming sessions associated with the authenticated user
-   */
-  list(options?: Core.RequestOptions): Core.APIPromise<SessionListResponse> {
-    return this._client.get('/sessions', options);
   }
 
   /**
@@ -63,53 +56,6 @@ export namespace SessionRetrieveResponse {
     id: string;
 
     /**
-     * A human-readable name for the session to help identify it
-     */
-    name: string;
-
-    /**
-     * If true, the session is publicly viewable by all users. If false, only
-     * authorized users can access it
-     */
-    public: boolean;
-
-    /**
-     * The timestamp indicating when this session started.
-     */
-    startedAt: string | number;
-
-    /**
-     * The timestamp indicating when this session was completed or terminated. Null if
-     * session is still active.
-     */
-    endedAt?: string | number;
-  }
-}
-
-export interface SessionListResponse {
-  /**
-   * A list of gaming sessions associated with the user
-   */
-  data: Array<SessionListResponse.Data>;
-}
-
-export namespace SessionListResponse {
-  /**
-   * Represents a single game play session, tracking its lifetime and accessibility
-   * settings.
-   */
-  export interface Data {
-    /**
-     * Unique object identifier. The format and length of IDs may change over time.
-     */
-    id: string;
-
-    /**
-     * A human-readable name for the session to help identify it
-     */
-    name: string;
-
-    /**
      * If true, the session is publicly viewable by all users. If false, only
      * authorized users can access it
      */
@@ -134,26 +80,10 @@ export interface SessionDeleteResponse {
 
 export interface SessionCreateParams {
   /**
-   * The unique fingerprint of the machine to play on, derived from its Linux machine
-   * ID
-   */
-  fingerprint: string;
-
-  /**
-   * The human readable name to give this session
-   */
-  name: string;
-
-  /**
    * Whether the session is publicly viewable by all users. If false, only authorized
    * users can access it
    */
   public: boolean;
-
-  /**
-   * The Steam ID of the game the user wants to play
-   */
-  steamID: number;
 }
 
 Sessions.Active = Active;
@@ -162,7 +92,6 @@ export declare namespace Sessions {
   export {
     type SessionCreateResponse as SessionCreateResponse,
     type SessionRetrieveResponse as SessionRetrieveResponse,
-    type SessionListResponse as SessionListResponse,
     type SessionDeleteResponse as SessionDeleteResponse,
     type SessionCreateParams as SessionCreateParams,
   };
