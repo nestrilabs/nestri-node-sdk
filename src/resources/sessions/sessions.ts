@@ -2,8 +2,8 @@
 
 import { APIResource } from '../../resource';
 import * as Core from '../../core';
-import * as ActiveAPI from './active/active';
-import { Active, ActiveListResponse } from './active/active';
+import * as ActiveAPI from './active';
+import { Active, ActiveListResponse } from './active';
 
 export class Sessions extends APIResource {
   active: ActiveAPI.Active = new ActiveAPI.Active(this._client);

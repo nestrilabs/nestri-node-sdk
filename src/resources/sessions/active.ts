@@ -1,13 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIResource } from '../../../resource';
-import * as Core from '../../../core';
-import * as PublicAPI from './public';
-import { Public } from './public';
+import { APIResource } from '../../resource';
+import * as Core from '../../core';
 
 export class Active extends APIResource {
-  public: PublicAPI.Public = new PublicAPI.Public(this._client);
-
   /**
    * Returns a list of all active gaming sessions associated with the authenticated
    * user
@@ -54,10 +50,6 @@ export namespace ActiveListResponse {
   }
 }
 
-Active.Public = Public;
-
 export declare namespace Active {
   export { type ActiveListResponse as ActiveListResponse };
-
-  export { Public as Public };
 }
