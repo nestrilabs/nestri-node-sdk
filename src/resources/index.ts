@@ -2,7 +2,13 @@
 
 export { Games } from './games/games';
 export { Machines } from './machines';
-export { Sessions } from './sessions/sessions';
+export {
+  Sessions,
+  type SessionCreateResponse,
+  type SessionRetrieveResponse,
+  type SessionDeleteResponse,
+  type SessionCreateParams,
+} from './sessions/sessions';
 export {
   Subscriptions,
   type SubscriptionCreateResponse,

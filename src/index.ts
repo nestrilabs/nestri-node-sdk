@@ -16,7 +16,13 @@ import {
 import { Teams } from './resources/teams';
 import { UserRetrieveResponse, Users } from './resources/users';
 import { Games } from './resources/games/games';
-import { Sessions } from './resources/sessions/sessions';
+import {
+  SessionCreateParams,
+  SessionCreateResponse,
+  SessionDeleteResponse,
+  SessionRetrieveResponse,
+  Sessions,
+} from './resources/sessions/sessions';
 
 export interface ClientOptions {
   /**
@@ -185,7 +191,13 @@ export declare namespace Nestri {
 
   export { Machines as Machines };
 
-  export { Sessions as Sessions };
+  export {
+    Sessions as Sessions,
+    type SessionCreateResponse as SessionCreateResponse,
+    type SessionRetrieveResponse as SessionRetrieveResponse,
+    type SessionDeleteResponse as SessionDeleteResponse,
+    type SessionCreateParams as SessionCreateParams,
+  };
 
   export { Games as Games };
 

@@ -27,9 +27,9 @@ const client = new Nestri({
 });
 
 async function main() {
-  const user = await client.users.retrieve();
+  const session = await client.sessions.create({ public: true });
 
-  console.log(user.data);
+  console.log(session.data);
 }
 
 main();
@@ -48,7 +48,8 @@ const client = new Nestri({
 });
 
 async function main() {
-  const user: Nestri.UserRetrieveResponse = await client.users.retrieve();
+  const params: Nestri.SessionCreateParams = { public: true };
+  const session: Nestri.SessionCreateResponse = await client.sessions.create(params);
 }
 
 main();
@@ -65,7 +66,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const user = await client.users.retrieve().catch(async (err) => {
+  const session = await client.sessions.create({ public: true }).catch(async (err) => {
     if (err instanceof Nestri.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -108,7 +109,7 @@ const client = new Nestri({
 });
 
 // Or, configure per-request:
-await client.users.retrieve({
+await client.sessions.create({ public: true }, {
   maxRetries: 5,
 });
 ```
@@ -125,7 +126,7 @@ const client = new Nestri({
 });
 
 // Override per-request:
-await client.users.retrieve({
+await client.sessions.create({ public: true }, {
   timeout: 5 * 1000,
 });
 ```
@@ -146,13 +147,13 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const client = new Nestri();
 
-const response = await client.users.retrieve().asResponse();
+const response = await client.sessions.create({ public: true }).asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: user, response: raw } = await client.users.retrieve().withResponse();
+const { data: session, response: raw } = await client.sessions.create({ public: true }).withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(user.data);
+console.log(session.data);
 ```
 
 ### Making custom/undocumented requests
@@ -256,9 +257,12 @@ const client = new Nestri({
 });
 
 // Override per-request:
-await client.users.retrieve({
-  httpAgent: new http.Agent({ keepAlive: false }),
-});
+await client.sessions.create(
+  { public: true },
+  {
+    httpAgent: new http.Agent({ keepAlive: false }),
+  },
+);
 ```
 
 ## Semantic versioning
