@@ -27,12 +27,14 @@ Methods:
 Types:
 
 - <code><a href="./src/resources/users.ts">UserRetrieveResponse</a></code>
+- <code><a href="./src/resources/users.ts">UserListResponse</a></code>
+- <code><a href="./src/resources/users.ts">UserSessionResponse</a></code>
 
 Methods:
 
-- <code title="get /users/@me">client.users.<a href="./src/resources/users.ts">retrieve</a>() -> UserRetrieveResponse</code>
-
-# Teams
+- <code title="get /users/{id}">client.users.<a href="./src/resources/users.ts">retrieve</a>(id) -> UserRetrieveResponse</code>
+- <code title="get /users">client.users.<a href="./src/resources/users.ts">list</a>() -> UserListResponse</code>
+- <code title="get /users/{id}/session">client.users.<a href="./src/resources/users.ts">session</a>(id) -> UserSessionResponse</code>
 
 # Subscriptions
 
