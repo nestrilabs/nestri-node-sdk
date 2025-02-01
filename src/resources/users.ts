@@ -5,10 +5,10 @@ import * as Core from '../core';
 
 export class Users extends APIResource {
   /**
-   * Gets a user's profile by their id
+   * Returns the current authenticate user's profile
    */
-  retrieve(id: string, options?: Core.RequestOptions): Core.APIPromise<UserRetrieveResponse> {
-    return this._client.get(`/users/${id}`, options);
+  retrieve(options?: Core.RequestOptions): Core.APIPromise<UserRetrieveResponse> {
+    return this._client.get('/users/@me', options);
   }
 
   /**
@@ -19,7 +19,7 @@ export class Users extends APIResource {
   }
 
   /**
-   * Get a user's gaming session details by their id
+   * Get a user's active gaming session details by their id
    */
   session(id: string, options?: Core.RequestOptions): Core.APIPromise<UserSessionResponse> {
     return this._client.get(`/users/${id}/session`, options);
