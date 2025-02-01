@@ -27,7 +27,7 @@ const client = new Nestri({
 });
 
 async function main() {
-  const user = await client.users.retrieve('faa29bba-c96e-494c-89b0-1f1ec9b87376');
+  const user = await client.users.retrieve();
 
   console.log(user.data);
 }
@@ -48,7 +48,7 @@ const client = new Nestri({
 });
 
 async function main() {
-  const user: Nestri.UserRetrieveResponse = await client.users.retrieve(
+  const task: Nestri.TaskRetrieveResponse = await client.tasks.retrieve(
     'faa29bba-c96e-494c-89b0-1f1ec9b87376',
   );
 }
@@ -67,7 +67,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const user = await client.users.retrieve('faa29bba-c96e-494c-89b0-1f1ec9b87376').catch(async (err) => {
+  const task = await client.tasks.retrieve('faa29bba-c96e-494c-89b0-1f1ec9b87376').catch(async (err) => {
     if (err instanceof Nestri.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -110,7 +110,7 @@ const client = new Nestri({
 });
 
 // Or, configure per-request:
-await client.users.retrieve('faa29bba-c96e-494c-89b0-1f1ec9b87376', {
+await client.tasks.retrieve('faa29bba-c96e-494c-89b0-1f1ec9b87376', {
   maxRetries: 5,
 });
 ```
@@ -127,7 +127,7 @@ const client = new Nestri({
 });
 
 // Override per-request:
-await client.users.retrieve('faa29bba-c96e-494c-89b0-1f1ec9b87376', {
+await client.tasks.retrieve('faa29bba-c96e-494c-89b0-1f1ec9b87376', {
   timeout: 5 * 1000,
 });
 ```
@@ -148,15 +148,15 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const client = new Nestri();
 
-const response = await client.users.retrieve('faa29bba-c96e-494c-89b0-1f1ec9b87376').asResponse();
+const response = await client.tasks.retrieve('faa29bba-c96e-494c-89b0-1f1ec9b87376').asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: user, response: raw } = await client.users
+const { data: task, response: raw } = await client.tasks
   .retrieve('faa29bba-c96e-494c-89b0-1f1ec9b87376')
   .withResponse();
 console.log(raw.headers.get('X-My-Header'));
-console.log(user.data);
+console.log(task.data);
 ```
 
 ### Making custom/undocumented requests
@@ -260,7 +260,7 @@ const client = new Nestri({
 });
 
 // Override per-request:
-await client.users.retrieve('faa29bba-c96e-494c-89b0-1f1ec9b87376', {
+await client.tasks.retrieve('faa29bba-c96e-494c-89b0-1f1ec9b87376', {
   httpAgent: new http.Agent({ keepAlive: false }),
 });
 ```
