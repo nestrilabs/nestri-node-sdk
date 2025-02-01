@@ -40,6 +40,11 @@ export namespace UserRetrieveResponse {
     discriminator: string | number;
 
     /**
+     * Whether the user is active, idle or offline
+     */
+    status: 'active' | 'idle' | 'offline';
+
+    /**
      * The time when this profile was last edited
      */
     updatedAt: string | number;
