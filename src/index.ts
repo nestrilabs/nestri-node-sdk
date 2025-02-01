@@ -21,8 +21,7 @@ import {
   TaskUpdateResponse,
   Tasks,
 } from './resources/tasks';
-import { Teams } from './resources/teams';
-import { UserRetrieveResponse, Users } from './resources/users';
+import { UserListResponse, UserRetrieveResponse, UserSessionResponse, Users } from './resources/users';
 import {
   SessionCreateParams,
   SessionCreateResponse,
@@ -146,7 +145,6 @@ export class Nestri extends Core.APIClient {
 
   sessions: API.Sessions = new API.Sessions(this);
   users: API.Users = new API.Users(this);
-  teams: API.Teams = new API.Teams(this);
   subscriptions: API.Subscriptions = new API.Subscriptions(this);
   tasks: API.Tasks = new API.Tasks(this);
 
@@ -188,7 +186,6 @@ export class Nestri extends Core.APIClient {
 
 Nestri.Sessions = Sessions;
 Nestri.Users = Users;
-Nestri.Teams = Teams;
 Nestri.Subscriptions = Subscriptions;
 Nestri.Tasks = Tasks;
 export declare namespace Nestri {
@@ -202,9 +199,12 @@ export declare namespace Nestri {
     type SessionCreateParams as SessionCreateParams,
   };
 
-  export { Users as Users, type UserRetrieveResponse as UserRetrieveResponse };
-
-  export { Teams as Teams };
+  export {
+    Users as Users,
+    type UserRetrieveResponse as UserRetrieveResponse,
+    type UserListResponse as UserListResponse,
+    type UserSessionResponse as UserSessionResponse,
+  };
 
   export {
     Subscriptions as Subscriptions,

@@ -23,5 +23,4 @@ export {
   type TaskDeleteResponse,
   type TaskSessionResponse,
 } from './tasks';
-export { Teams } from './teams';
-export { Users, type UserRetrieveResponse } from './users';
+export { Users, type UserRetrieveResponse, type UserListResponse, type UserSessionResponse } from './users';
