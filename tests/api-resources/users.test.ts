@@ -10,7 +10,7 @@ const client = new Nestri({
 
 describe('resource users', () => {
   test('retrieve', async () => {
-    const responsePromise = client.users.retrieve('0bfcb712-df13-4454-81a8-fbee66eddca4');
+    const responsePromise = client.users.retrieve();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -22,9 +22,9 @@ describe('resource users', () => {
 
   test('retrieve: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(
-      client.users.retrieve('0bfcb712-df13-4454-81a8-fbee66eddca4', { path: '/_stainless_unknown_path' }),
-    ).rejects.toThrow(Nestri.NotFoundError);
+    await expect(client.users.retrieve({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+      Nestri.NotFoundError,
+    );
   });
 
   test('list', async () => {
