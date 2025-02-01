@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.13 (2025-02-01)
+
+Full Changelog: [v0.1.0-alpha.12...v0.1.0-alpha.13](https://github.com/nestrilabs/nestri-node-sdk/compare/v0.1.0-alpha.12...v0.1.0-alpha.13)
+
+### Features
+
+* **api:** Add user sessions endpoints ([#57](https://github.com/nestrilabs/nestri-node-sdk/issues/57)) ([461f8d6](https://github.com/nestrilabs/nestri-node-sdk/commit/461f8d6fb1c1d7dfa0ac406fefda1ff7839163da))
+* **api:** api update ([#55](https://github.com/nestrilabs/nestri-node-sdk/issues/55)) ([7a281f4](https://github.com/nestrilabs/nestri-node-sdk/commit/7a281f458fc63da25bb482df62d5c27b849a8b3b))
+
 ## 0.1.0-alpha.12 (2025-01-31)
 
 Full Changelog: [v0.1.0-alpha.11...v0.1.0-alpha.12](https://github.com/nestrilabs/nestri-node-sdk/compare/v0.1.0-alpha.11...v0.1.0-alpha.12)
