@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.15 (2025-02-14)
+
+Full Changelog: [v0.1.0-alpha.14...v0.1.0-alpha.15](https://github.com/nestrilabs/nestri-node-sdk/compare/v0.1.0-alpha.14...v0.1.0-alpha.15)
+
+### Features
+
+* **client:** send `X-Stainless-Timeout` header ([#63](https://github.com/nestrilabs/nestri-node-sdk/issues/63)) ([56b5f5a](https://github.com/nestrilabs/nestri-node-sdk/commit/56b5f5a28065143aacfc7b4992ed149b447c0212))
+
+
+### Bug Fixes
+
+* **client:** fix export map for index exports ([#65](https://github.com/nestrilabs/nestri-node-sdk/issues/65)) ([d06846a](https://github.com/nestrilabs/nestri-node-sdk/commit/d06846a8031f41a6111800e154cb3336b33aa6c0))
+
 ## 0.1.0-alpha.14 (2025-02-01)
 
 Full Changelog: [v0.1.0-alpha.13...v0.1.0-alpha.14](https://github.com/nestrilabs/nestri-node-sdk/compare/v0.1.0-alpha.13...v0.1.0-alpha.14)
