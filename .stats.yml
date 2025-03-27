@@ -1,2 +1,4 @@
 configured_endpoints: 16
 openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/nestri%2Fnestri-sdk-ff368f2566e2ac8b5ce672182dde28e96d6e3ed7a70b01391ca65cca78d8d865.yml
+openapi_spec_hash: ec970ec0bb4883be0505f1c68ea684d3
+config_hash: a6b37133b6565f517c6a08312d42c529
