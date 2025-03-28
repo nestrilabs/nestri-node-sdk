@@ -1,5 +1,36 @@
 # Changelog
 
+## 0.1.0-alpha.15 (2025-03-28)
+
+Full Changelog: [v0.1.0-alpha.14...v0.1.0-alpha.15](https://github.com/nestrilabs/nestri-node-sdk/compare/v0.1.0-alpha.14...v0.1.0-alpha.15)
+
+### Features
+
+* add SKIP_BREW env var to ./scripts/bootstrap ([#68](https://github.com/nestrilabs/nestri-node-sdk/issues/68)) ([77adb42](https://github.com/nestrilabs/nestri-node-sdk/commit/77adb4255ad1471862690d87d74f7746e0bb2f50))
+* **client:** accept RFC6838 JSON content types ([#69](https://github.com/nestrilabs/nestri-node-sdk/issues/69)) ([c11e99b](https://github.com/nestrilabs/nestri-node-sdk/commit/c11e99b38558d0696e5a8b95c84abde1cb9d354e))
+* **client:** send `X-Stainless-Timeout` header ([#63](https://github.com/nestrilabs/nestri-node-sdk/issues/63)) ([56b5f5a](https://github.com/nestrilabs/nestri-node-sdk/commit/56b5f5a28065143aacfc7b4992ed149b447c0212))
+
+
+### Bug Fixes
+
+* avoid type error in certain environments ([#74](https://github.com/nestrilabs/nestri-node-sdk/issues/74)) ([e7a3dca](https://github.com/nestrilabs/nestri-node-sdk/commit/e7a3dca6797943245f7db77f377d773fe8692eff))
+* **client:** fix export map for index exports ([#65](https://github.com/nestrilabs/nestri-node-sdk/issues/65)) ([d06846a](https://github.com/nestrilabs/nestri-node-sdk/commit/d06846a8031f41a6111800e154cb3336b33aa6c0))
+* **exports:** ensure resource imports don't require /index ([#71](https://github.com/nestrilabs/nestri-node-sdk/issues/71)) ([ac43d2e](https://github.com/nestrilabs/nestri-node-sdk/commit/ac43d2e1f258a9f0aa96b2f75af6800f0913683f))
+* **internal:** work around https://github.com/vercel/next.js/issues/76881 ([#75](https://github.com/nestrilabs/nestri-node-sdk/issues/75)) ([bfa5e9c](https://github.com/nestrilabs/nestri-node-sdk/commit/bfa5e9c2b9092909de2a810e73bf6b610ddc5337))
+
+
+### Chores
+
+* **exports:** cleaner resource index imports ([#72](https://github.com/nestrilabs/nestri-node-sdk/issues/72)) ([2311ebf](https://github.com/nestrilabs/nestri-node-sdk/commit/2311ebf9ed82ffecbbae0366abf332c1eb0a3d2c))
+* **exports:** stop using path fallbacks ([#73](https://github.com/nestrilabs/nestri-node-sdk/issues/73)) ([d5f3ea8](https://github.com/nestrilabs/nestri-node-sdk/commit/d5f3ea826e0c3ab0a26ccdbe771b85f117bf1066))
+* **internal:** fix devcontainers setup ([#66](https://github.com/nestrilabs/nestri-node-sdk/issues/66)) ([351f61e](https://github.com/nestrilabs/nestri-node-sdk/commit/351f61ed056928fc5ef38274dd4db4d2934963f1))
+* **internal:** remove extra empty newlines ([#70](https://github.com/nestrilabs/nestri-node-sdk/issues/70)) ([9e7af5d](https://github.com/nestrilabs/nestri-node-sdk/commit/9e7af5d9f787834ae6af6982f067f51f5d20cf09))
+
+
+### Documentation
+
+* update URLs from stainlessapi.com to stainless.com ([#67](https://github.com/nestrilabs/nestri-node-sdk/issues/67)) ([ad52af8](https://github.com/nestrilabs/nestri-node-sdk/commit/ad52af83be30631eee1fc4168da2b0b22ee08068))
+
 ## 0.1.0-alpha.14 (2025-02-01)
 
 Full Changelog: [v0.1.0-alpha.13...v0.1.0-alpha.14](https://github.com/nestrilabs/nestri-node-sdk/compare/v0.1.0-alpha.13...v0.1.0-alpha.14)
